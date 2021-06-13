@@ -8,19 +8,19 @@ def home():
 
 @app.route('/about')
 def about():
-	return 'about page'
+	return render_template('about.html')
 
 @app.route('/register')
 def register():
-	return 'register page'
+	return render_template('register.html')
 
 @app.route('/login')
 def login():
-	return 'login page'
+	return render_template('login.html')
 
 @app.route('/<page_name>')
 def other_page(page_name):
-	response = make_response('The page named %s does not exist.'  % page_name, 404)
+	response = make_response(render_template('404.html'), 404)
 	return response
 
 if __name__ == '__main__':

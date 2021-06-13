@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block headline %}
+	<h1>{% block title %}Log into your account{% endblock %}</h1>
+{% endblock %}
+
+{% block main %}
+	<form class="container d-flex flex-column align-items-center mt-5">
+		<div class="mb-3">
+			<label for="inputEmail1" class="form-label">Email</label>
+			<input type="email" id="inputEmail1" placeholder="Enter email" required name="email">
+		</div>
+		<div class="mb-3">
+			<label for="inputPassword1" class="form-label">Password</label>
+			<input type="password" id="inputPassword1" placeholder="Password" required name="password">
+		</div>
+		<button class="btn btn-primary" type="submit">Submit</button>
+	</form>
+{% endblock %}
