@@ -17,5 +17,7 @@ def create_app(config_file=None):
 		)
 
 	# attach routes/ views and database functions
+	from . import db
+	db.init_app(app)
 
 	return app
