@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block main %}
+	<p class="lead">Did you receive a mean review on your paper? Share it with us. Check the mean reviews others shared below:</p>
 	<figure>
 		<blockquote class="blockquote">
 			<p>
@@ -13,18 +14,21 @@
 			</p>
 		</blockquote>
 		<figcaption class="blockquote-footer">
-			@thirdreviewer from <cite title="Source Title">Source Title</cite>
+			From @thirdreviewer 
 		</figcaption>
 	</figure>
 
+	{% for review in reviews %}
 	<figure>
 		<blockquote class="blockquote">
-			<p>Before I can recommend acceptance, I request the following 272
-			changes to the manuscript.</p>
+			<p>
+				{{ review['content'] }}
+			</p>
 		</blockquote>
 		<figcaption class="blockquote-footer">
-			@thirdreviewer
+			From @{{ review['username'].split("@")[0] }}
 		</figcaption>
 	</figure>
+	{% endfor %}
 {% endblock %}
 	
