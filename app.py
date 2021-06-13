@@ -1,10 +1,10 @@
-from flask import Flask, make_response
+from flask import Flask, make_response, render_template
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-	return 'home page'
+	return render_template('home.html')
 
 @app.route('/about')
 def about():
@@ -20,7 +20,7 @@ def login():
 
 @app.route('/<page_name>')
 def other_page(page_name):
-	response = make_response('The page named %s does not exist.' / % page_name, 404)
+	response = make_response('The page named %s does not exist.'  % page_name, 404)
 	return response
 
 if __name__ == '__main__':

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block headline %}
+	<h1>{% block title %}Mean Reviews{% endblock %}</h1>
+{% endblock %}
+
+{% block main %}
+	<figure>
+		<blockquote class="blockquote">
+			<p>
+				This paper is more appropriate for a specialty journal. Like,
+				one that specializes in terrible papers.
+			</p>
+		</blockquote>
+		<figcaption class="blockquote-footer">
+			@thirdreviewer from <cite title="Source Title">Source Title</cite>
+		</figcaption>
+	</figure>
+
+	<figure>
+		<blockquote class="blockquote">
+			<p>Before I can recommend acceptance, I request the following 272
+			changes to the manuscript.</p>
+		</blockquote>
+		<figcaption class="blockquote-footer">
+			@thirdreviewer
+		</figcaption>
+	</figure>
+{% endblock %}
+	
