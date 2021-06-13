@@ -8,7 +8,8 @@ def create_app(config_file=None):
 	app = Flask(__name__)
 
 	# configuration
-	if (config_name is not None):
+	# changed config_name to config_file
+	if (config_file is not None):
 		app.config.from_pyfile(config_file, silent=True)
 	else:
 		app.config.from_mapping(
@@ -19,5 +20,8 @@ def create_app(config_file=None):
 	# attach routes/ views and database functions
 	from . import db
 	db.init_app(app)
+
+	from . import auth
+	app.register_blueprint(auth.bp)
 
 	return app
